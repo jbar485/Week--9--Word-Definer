@@ -25,4 +25,8 @@ class Word
   def ==(word_to_compare)
     self.name() == word_to_compare.name()
   end
+
+  def self.find(id)
+    @@words[id]
+  end
 end
