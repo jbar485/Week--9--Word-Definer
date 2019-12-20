@@ -18,4 +18,33 @@ describe "#Definition" do
       expect(definition).to(eq(definition2))
     end
   end
+
+  describe(".all") do
+    it "will return a list of all the definitions" do
+      definition = Definition.new("To be afraid", @word.id, nil)
+      definition.save()
+      definition2 = Definition.new("to be awesome", @word.id, nil)
+      definition2.save()
+      expect(Definition.all).to(eq([definition, definition2]))
+    end
+  end
+
+  describe('.clear') do
+    it("clears all definitions in the list") do
+      definition = Definition.new("To be afraid", @word.id, nil)
+      definition.save()
+      definition2 = Definition.new("to be awesome", @word.id, nil)
+      definition2.save()
+      Definition.clear()
+      expect(Definition.all).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it("saves a definition") do
+      definition = Definition.new("To be afraid", @word.id, nil)
+      definition.save()
+      expect(Definition.all).to(eq([definition]))
+    end
+  end
 end
