@@ -66,4 +66,27 @@ describe "#Definition" do
       expect(definition.name).to(eq("Cool Party"))
     end
   end
+
+  describe("#delete") do
+    it "will delete a song based on its id" do
+      definition = Definition.new("To love someone", @word.id, nil)
+      definition.save()
+      definition2 = Definition.new("To hate someone", @word.id, nil)
+      definition2.save()
+      definition2.delete()
+      expect(Definition.all).to(eq([definition]))
+    end
+  end
+
+  describe(".find_by_word") do
+    it "will find a definition for a word" do
+      word2 = Word.new("Hot", nil)
+      word2.save()
+      definition = Definition.new("To love someone", @word.id, nil)
+      definition.save()
+      definition2 = Definition.new("To hate someone", word2.id, nil)
+      definition2.save()
+      expect(Definition.find_by_word(word2.id)).to(eq([definition2]))
+    end
+  end
 end
