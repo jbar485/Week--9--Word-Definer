@@ -51,4 +51,22 @@ describe "Word" do
       expect(Word.find(word.id)).to(eq(word))
     end
   end
+
+  describe("#update") do
+    it("will update a word based on its id") do
+      word = Word.new("Dope", nil)
+      word.save()
+      word.update("Sweet")
+      expect(word.name).to(eq("Sweet"))
+    end
+  end
+
+  describe("#update") do
+    it("will test to see if it will update if the user enters nothing") do
+      word = Word.new("Junk", nil)
+      word.save()
+      word.update("")
+      expect(word.name).to(eq("Junk"))
+    end
+  end
 end
