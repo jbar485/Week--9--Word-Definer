@@ -69,4 +69,15 @@ describe "Word" do
       expect(word.name).to(eq("Junk"))
     end
   end
+
+  describe("delete") do
+    it("will delete a word by its id") do
+      word = Word.new("Trash", nil)
+      word.save()
+      word2 = Word.new("Garbage", nil)
+      word2.save()
+      word.delete()
+      expect(Word.all).to(eq([word2]))
+    end
+  end
 end

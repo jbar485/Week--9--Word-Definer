@@ -35,4 +35,8 @@ class Word
       @name = name
     end
   end
+
+  def delete
+    @@words.delete(self.id)
+  end
 end
