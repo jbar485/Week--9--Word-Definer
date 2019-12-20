@@ -17,8 +17,9 @@ _The concept for the website is to make learning fun: children will write up a l
 * _Navigate to the root directory of your project_
 * _Make sure your computer is able to install gems, if you have a mac, you should be fine_
 * _Type "bundle" to install the gems_
+* _run "ruby app.rb" in terminal to see the website_
 
-### If you would like to view it and interact with it
+### If you would like to view it and interact with it anywhere
 
 * __
 
