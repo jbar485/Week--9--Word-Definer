@@ -12,4 +12,14 @@ describe "Word" do
       expect(Word.all).to(eq([]))
     end
   end
+
+  describe("#save") do
+    it("saves a word that the user enters") do
+      word = Word.new("Awesome", nil)
+      word.save()
+      word2 = Word.new("Cool", nil)
+      word2.save()
+      expect(Word.all).to(eq([word, word2]))
+    end
+  end
 end
