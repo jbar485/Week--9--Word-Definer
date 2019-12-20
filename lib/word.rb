@@ -30,6 +30,10 @@ class Word
     @@words[id]
   end
 
+  def self.search(word)
+    @@words.values().select { |element| /#{word}/i.match? element.name}
+  end
+
   def update(name)
     if name != ""
       @name = name
