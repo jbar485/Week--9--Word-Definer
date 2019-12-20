@@ -15,7 +15,7 @@ class Word
   end
 
   def self.all
-    @@words.values()
+    @@words.values().sort { |a, b| a.name.downcase <=> b.name.downcase}
   end
 
   def save

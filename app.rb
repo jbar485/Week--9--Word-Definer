@@ -6,6 +6,15 @@ require('pry')
 also_reload('lib/**/*.rb')
 
 get("/") do
-  @words = Words.all
+  @words = Word.all
+  erb(:words)
+end
+
+get("/words") do
+  if params[:search]
+    @words = Word.search(params[:search])
+  else
+    @words = Word.all
+  end
   erb(:words)
 end
