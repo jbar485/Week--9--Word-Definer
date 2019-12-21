@@ -7,13 +7,13 @@
   <label for="name">Edit definition</label>
   <input id="name" name="name" type="text">
 
-  <button type="submit">Update</button>
+  <button type="submit" class="btn btn-outline-dark">Update</button>
 </form>
 
 <form action="/words/<%= @definition.words.id %>/definitions/<%= @definition.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
 
-  <button type="submit">Delete</button>
+  <button type="submit" class="btn btn-outline-dark">Delete</button>
 </form>
 
 <a href="/words/<%= @definition.words.id %>">Back to <%= @definition.words.name %></a>
